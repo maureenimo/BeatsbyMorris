@@ -124,3 +124,36 @@ def get_all_users():
         return make_response(jsonify(users_list), 200)
     else:
         return make_response(jsonify({"error": "No users found"}), 404)
+
+
+#collect reviews
+@app.route('/reviews', methods=['POST'])
+def submit_review():
+    data = request.get_json()
+
+    required_fields = ['user_email', 'rating']
+    if not all(field in data for field in required_fields):
+        return make_response(jsonify({"error": "Missing required fields"}), 400)
+
+    user = User.query.filter_by(email=data['user_email']).first()
+    if not user:
+        return make_response(jsonify({"error": "User not found"}), 404)
+
+    new_review = Review(
+        user_id=user.id,
+        rating=data['rating'],
+        feedback=data.get('feedback', None)
+    )
+
+    db.session.add(new_review)
+    db.session.commit()
+
+    response_body = {
+        "id": new_review.id,
+        "user_email": data['user_email'],
+        "rating": new_review.rating,
+        "feedback": new_review.feedback,
+        "created_at": new_review.created_at,
+    }
+
+    return make_response(jsonify(response_body), 201)
