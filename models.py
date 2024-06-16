@@ -25,7 +25,6 @@ class User(db.Model):
     last_name = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False, unique=True)
     phone = db.Column(db.String, nullable=False)
-    # password = db.Column(db.String, nullable=True)
     password_hash = db.Column(db.String, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -33,3 +32,15 @@ class User(db.Model):
     addresses = db.relationship('Address', backref='user', lazy=True)
     orders = db.relationship('Order')
     reservation = db.relationship('Reservation')
+    
+    @property
+    def password(self):
+        raise AttributeError('password: write-only field')
+
+    @password.setter
+    def password(self, password):
+        self.password_hash = bcrypt.generate_password_hash(
+            password).decode('utf-8')
+
+    def authenticate(self, pwd):
+        return bcrypt.check_password_hash(self.password_hash, pwd)
