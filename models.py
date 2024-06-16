@@ -55,5 +55,22 @@ class Order(db.Model):
     
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     location_id = db.Column(db.Integer, db.ForeignKey("locations.id"))
-    order_items = db.relationship(
-        'OrderItem')
+    order_items = db.relationship('OrderItem')
+
+
+class OrderItem(db.Model):
+    __tablename__ = 'order_items'
+    id = db.Column(db.Integer, primary_key=True)
+    quantity = db.Column(db.Integer)
+    order_id = db.Column(db.Integer, db.ForeignKey(
+        'orders.id'))
+    food_id=db.Column(db.Integer, db.ForeignKey('foods.id'))
+    
+class Review(db.Model):
+    __tablename__ = 'reviews'
+
+    id = db.Column(db.Integer, primary_key=True)
+    rating = db.Column(db.Integer, nullable=False)
+    feedback = db.Column(db.String, nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
