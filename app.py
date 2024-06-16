@@ -157,3 +157,71 @@ def submit_review():
     }
 
     return make_response(jsonify(response_body), 201)
+
+
+# Collect address
+@app.route('/address', methods=['POST'])
+def add_address():
+    data = request.get_json()
+
+    required_fields = ['user_email', 'city', 'area', 'street', 'building', 'room']
+    if not all(field in data for field in required_fields):
+        return make_response(jsonify({"error": "Missing required fields"}), 400)
+
+    user = User.query.filter_by(email=data['user_email']).first()
+    if not user:
+        return make_response(jsonify({"error": "User not found"}), 404)
+
+    new_address = Address(
+        user_id=user.id,
+        city=data['city'],
+        area=data['area'],
+        street=data['street'],
+        building=data['building'],
+        room=data['room'],
+        notes=data.get('notes', None)
+    )
+
+    db.session.add(new_address)
+    db.session.commit()
+
+    response_body = {
+        "id": new_address.id,
+        "user_email": data['user_email'],
+        "city": new_address.city,
+        "area": new_address.area,
+        "street": new_address.street,
+        "building": new_address.building,
+        "room": new_address.room,
+        "notes": new_address.notes,
+    }
+
+    return make_response(jsonify(response_body), 201)
+
+# View addresses for a user
+@app.route('/addresses/<user_email>', methods=['GET'])
+def get_addresses_by_user(user_email):
+    user = User.query.filter_by(email=user_email).first()
+
+    if user:
+        addresses = Address.query.filter_by(user_id=user.id).all()
+        if addresses:
+            addresses_list = []
+            for address in addresses:
+                address_data = {
+                    "id": address.id,
+                    "user_email": user_email,
+                    "city": address.city,
+                    "area": address.area,
+                    "street": address.street,
+                    "building": address.building,
+                    "room": address.room,
+                    "notes": address.notes,
+                }
+                addresses_list.append(address_data)
+
+            return make_response(jsonify(addresses_list), 200)
+        else:
+            return make_response(jsonify({"error": "No addresses found for the user"}), 404)
+    else:
+        return make_response(jsonify({"error": "User not found"}), 404)
