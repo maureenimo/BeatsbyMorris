@@ -74,3 +74,26 @@ class Review(db.Model):
     feedback = db.Column(db.String, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+
+class Address(db.Model):
+    __tablename__ = 'addresses'
+
+    id = db.Column(db.Integer, primary_key=True)
+    area = db.Column(db.String, nullable=False)
+    street = db.Column(db.String, nullable=False)
+    building = db.Column(db.String, nullable=False)
+    room = db.Column(db.String, nullable=False)
+    notes = db.Column(db.String, nullable=True)
+    
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+class Location(db.Model):
+    __tablename__ = 'locations'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    latitude = db.Column(db.Float, nullable=False)
+    longitude = db.Column(db.Float, nullable=False)
+    delivery_fee = db.Column(db.Float, nullable=False)
+    orders = db.relationship("Order")
