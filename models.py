@@ -15,3 +15,21 @@ class Food(db.Model):
     price = db.Column(db.Integer, nullable=False)
     
     order_items=db.relationship('OrderItem')
+    
+
+class User(db.Model):
+    __tablename__ = 'users'
+
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String, nullable=False)
+    last_name = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, nullable=False, unique=True)
+    phone = db.Column(db.String, nullable=False)
+    # password = db.Column(db.String, nullable=True)
+    password_hash = db.Column(db.String, nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    reviews = db.relationship('Review', backref='user', lazy=True)
+    addresses = db.relationship('Address', backref='user', lazy=True)
+    orders = db.relationship('Order')
+    reservation = db.relationship('Reservation')
