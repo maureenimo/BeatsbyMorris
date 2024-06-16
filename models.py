@@ -97,3 +97,12 @@ class Location(db.Model):
     longitude = db.Column(db.Float, nullable=False)
     delivery_fee = db.Column(db.Float, nullable=False)
     orders = db.relationship("Order")
+
+class Reservation(db.Model):
+    __tablename__ = 'reservations'
+
+    id = db.Column(db.Integer, primary_key=True)
+    date_time = db.Column(db.DateTime, nullable=False)
+    guests_no = db.Column(db.Integer, nullable=False)
+    notes = db.Column(db.String, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
