@@ -101,3 +101,26 @@ def register_user():
     }
 
     return make_response(jsonify(response_body), 201)
+    
+
+# View all users
+@app.route('/users', methods=['GET'])
+def get_all_users():
+    users = User.query.all()
+
+    if users:
+        users_list = []
+        for user in users:
+            user_data = {
+                "id": user.id,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "email": user.email,
+                "phone": user.phone,
+                "created_at": user.created_at,
+            }
+            users_list.append(user_data)
+
+        return make_response(jsonify(users_list), 200)
+    else:
+        return make_response(jsonify({"error": "No users found"}), 404)
