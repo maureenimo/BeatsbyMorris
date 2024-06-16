@@ -30,3 +30,18 @@ migrate = Migrate(app, db)
 db.init_app(app)
 
 mail = Mail(app)
+
+
+with app.app_context():
+    # Check if the 'foods' table exists
+    db.create_all()
+    inspector = inspect(db.engine)
+        # print all table names
+    if 'foods' in inspector.get_table_names():
+        print(inspector.get_table_names())
+        
+
+#Mpesa
+consumer_key='7GSlEmZiocYKga9acUBDyIYiuJqOvZvHd6XGzbcVZadPm93f'
+consumer_secret='Vh2mvQS4GKyo6seUtpAApN1plTwMDTeqyGZNBEtESYH05sBfRMSddn5vnlJ4zifA'
+base_url='https://1115-105-161-25-71.ngrok-free.app'
