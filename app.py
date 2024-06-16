@@ -45,3 +45,23 @@ with app.app_context():
 consumer_key='7GSlEmZiocYKga9acUBDyIYiuJqOvZvHd6XGzbcVZadPm93f'
 consumer_secret='Vh2mvQS4GKyo6seUtpAApN1plTwMDTeqyGZNBEtESYH05sBfRMSddn5vnlJ4zifA'
 base_url='https://1115-105-161-25-71.ngrok-free.app'
+
+#Dishes API
+@app.route('/dishes', methods=['GET'])
+def get_foods():
+    foods = []
+    for food in Food.query.all():
+        response_body = {
+            "id": food.id,
+            "name": food.name,
+            "image": food.image,
+            "description": food.description,
+            "price": food.price
+        }
+        foods.append(response_body)
+
+    response = make_response(
+        jsonify(foods),
+        200
+    )
+    return response
