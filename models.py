@@ -106,3 +106,12 @@ class Reservation(db.Model):
     guests_no = db.Column(db.Integer, nullable=False)
     notes = db.Column(db.String, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+
+class Payment(db.Model):
+    __tablename__ = 'payments'
+
+    id = db.Column(db.Integer, primary_key=True)
+    number = db.Column(db.String, nullable=False)
+    amount = db.Column(db.String, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
