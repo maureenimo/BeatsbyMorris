@@ -65,3 +65,39 @@ def get_foods():
         200
     )
     return response
+
+
+#register users
+@app.route('/user', methods=['POST'])
+def register_user():
+    data = request.get_json()
+
+    required_fields = ['first_name', 'last_name', 'email', 'phone', 'password']
+    if not all(field in data for field in required_fields):
+        return make_response(jsonify({"error": "Missing required fields"}), 400)
+
+    existing_user = User.query.filter_by(email=data['email']).first()
+    if existing_user:
+        return make_response(jsonify({"error": "User with this email already exists"}), 409)
+
+    new_user = User(
+        first_name=data['first_name'],
+        last_name=data['last_name'],
+        email=data['email'],
+        phone=data['phone'],
+        password=data['password']
+    )
+    
+    db.session.add(new_user)
+    db.session.commit()
+
+    response_body = {
+        "id": new_user.id,
+        "first_name": new_user.first_name,
+        "last_name": new_user.last_name,
+        "email": new_user.email,
+        "phone": new_user.phone,
+        "created_at": new_user.created_at,
+    }
+
+    return make_response(jsonify(response_body), 201)
