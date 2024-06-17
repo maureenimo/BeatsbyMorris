@@ -69,18 +69,44 @@ class CheckSession(Resource):
 
 api.add_resource(CheckSession, '/checksession')
 
-# # logout
-# class Logout(Resource):
-#     def delete(self):
-#         user = session.get('user')
+# logout
+class Logout(Resource):
+    def delete(self):
+        user = session.get('user')
 
-#         if user:
-#             session['user'] = None
+        if user:
+            session['user'] = None
 
-#             return "LogOut Successful", 200
-#         return make_response("Method not allowed", 404)
+            return "LogOut Successful", 200
+        return make_response("Method not allowed", 404)
 
 
-# api.add_resource(Logout, '/logout')
+api.add_resource(Logout, '/logout')
+
+class UserSchema(mash.SQLAlchemySchema):
+    
+    class Meta:
+        model = User
+        load_instance = True
+
+    id = mash.auto_field()
+    first_name = mash.auto_field()
+    last_name = mash.auto_field()
+    email = mash.auto_field()
+    phone = mash.auto_field()
+    first_name = mash.auto_field()
+
+    url = mash.Hyperlinks(
+        {
+            "self": mash.URLFor(
+                "userbyid",
+                values=dict(id="<id>")),
+            "collection": mash.URLFor("users")
+        }
+    )
+
+
+user_schema = UserSchema()
+users_schema = UserSchema(many=True)
 
 
