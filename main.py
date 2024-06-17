@@ -55,3 +55,32 @@ class Login(Resource):
 
 api.add_resource(Login, '/login')
 
+
+class CheckSession(Resource):
+    def get(self):
+        user = session.get('user')
+        user_info = User.query.filter_by(email=user).first()
+
+        if user:
+            return User_details(user_info)
+
+        return "Please signIn to continue", 404
+
+
+api.add_resource(CheckSession, '/checksession')
+
+# # logout
+# class Logout(Resource):
+#     def delete(self):
+#         user = session.get('user')
+
+#         if user:
+#             session['user'] = None
+
+#             return "LogOut Successful", 200
+#         return make_response("Method not allowed", 404)
+
+
+# api.add_resource(Logout, '/logout')
+
+
