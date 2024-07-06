@@ -165,4 +165,38 @@ class Signup(Resource):
 api.add_resource(Signup, '/signup')
 
 
+class ReviewResource(Resource):
+    parser = reqparse.RequestParser()
+    parser.add_argument('user_email', required=True)
+    parser.add_argument('rating', required=True)
+    parser.add_argument('feedback')
+
+    @jwt_required()
+    def post(self):
+        data = ReviewResource.parser.parse_args()
+
+        user = User.query.filter_by(email=data['user_email']).first()
+        if not user:
+            return {"error": "User not found"}, 404
+
+        new_review = Review(
+            user_id=user.id,
+            rating=data['rating'],
+            feedback=data.get('feedback', None)
+        )
+
+        db.session.add(new_review)
+        db.session.commit()
+
+        response_body = {
+            "user_id": new_review.user_id(),
+            "rating": new_review.rating(),
+            "feedback": new_review.feedback()
+        }
+
+        return make_response("Success", 201)
+
+
+api.add_resource(ReviewResource, '/review')
+
 
