@@ -264,5 +264,26 @@ class DishesResource(Resource):
         )
         return response
 
-
 api.add_resource(DishesResource, '/dishes')
+
+# Locations
+class LocationResource(Resource):
+    def get(self):
+        locations = []
+        for location in Location.query.all():
+            response_body = {
+                "id": location.id,
+                "name": location.name,
+                "latitude": location.latitude,
+                "longitude": location.longitude,
+                "delivery_fee": location.delivery_fee
+            }
+            locations.append(response_body)
+        response = make_response(
+            jsonify(locations),
+            200
+        )
+        return response
+
+
+api.add_resource(LocationResource, '/locations')
