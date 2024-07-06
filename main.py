@@ -300,3 +300,44 @@ class DistanceResource(Resource):
         return response.json()
 
 api.add_resource(DistanceResource, '/distance')
+
+# Order
+class OrderResource(Resource):
+    def post(self):
+        data = request.get_json()
+        user = User.query.filter_by(email=data['user_email']).first()
+        if not user:
+            return make_response(jsonify({"error": "User not found"}), 404)
+
+        location = Location.query.get(data['location_id'])
+        if not location:
+            return make_response(jsonify({"error": "Location not found"}), 404)
+
+        new_order = Order(
+            user_id=user.id,
+            location_id=location.id,
+            sub_total_price=data['sub_total_price'],
+            total_price=data['total_price']
+        )
+
+        db.session.add(new_order)
+        db.session.commit()
+
+        for item in data['order_items']:
+            food = Food.query.get(item['id'])
+            if not food:
+                return make_response(jsonify({"error": "Food not found"}), 404)
+
+            new_order_item = OrderItem(
+                order_id=new_order.id,
+                food_id=food.id,
+                quantity=item['quantity']
+            )
+
+            db.session.add(new_order_item)
+            db.session.commit()
+
+        return make_response(jsonify({"message": "Order created successfully"}), 201)
+
+
+api.add_resource(OrderResource, '/orders')
