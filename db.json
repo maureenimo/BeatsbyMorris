@@ -1,0 +1,372 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "category": "Hot Beverages",
+      "name": "Black Tea",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/directly-above-shot-of-tea-on-table-royalty-free-image-1668551187.jpg?crop=0.747xw:1.00xh;0.0401xw,0&resize=1200:*",
+      "description": "Rich and aromatic, sourced from the finest tea leaves.",
+      "price": 30
+    },
+    {
+      "id": 2,
+      "category": "Hot Beverages",
+      "name": "Black Milo",
+      "image": "https://cookingwithelo.com/wp-content/uploads/2022/09/Hot-chocolate-with-water.jpg",
+      "description": "A delightful twist on a beloved favorite, combining Milo and black tea.",
+      "price": 50
+    },
+    {
+      "id": 3,
+      "category": "Hot Beverages",
+      "name": "Black Chocolate",
+      "image": "https://rainbowplantlife.com/wp-content/uploads/2022/12/Hot-chocolate-cover-image-1-of-1-500x375.jpg",
+      "description": "Velvety and decadent, crafted with premium cocoa beans.",
+      "price": 35
+    },
+    {
+      "id": 4,
+      "category": "Hot Beverages",
+      "name": "White Chocolate",
+      "image": "https://www.fifteenspatulas.com/wp-content/uploads/2015/01/Hot-Chocolate-Recipe-Fifteen-Spatulas-1-640x640.jpg",
+      "description": "Creamy bliss made with the finest white chocolate.",
+      "price": 40
+    },
+    {
+      "id": 5,
+      "category": "Hot Beverages",
+      "name": "Dawa",
+      "image": "https://z-p3-scontent.fmba2-1.fna.fbcdn.net/v/t1.6435-9/158506526_2938520689765759_1471361558831356097_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=dPsdaPn4b1QAX8lrgzZ&_nc_ht=z-p3-scontent.fmba2-1.fna&oh=00_AfDfOG6SpOpaehLY3c2h1VvWeO9PU9vY5A7sEGbFAAYX0Q&oe=65E3C750",
+      "description": "Soothing and invigorating beverage infused with traditional herbs and spices.",
+      "price": 50
+    },
+    {
+      "id": 6,
+      "category": "Hot Beverages",
+      "name": "Lemon Tea",
+      "image": "https://5.imimg.com/data5/VP/DK/WV/SELLER-1494947/lemon-tea-1000x1000.jpg",
+      "description": "Zesty and refreshing, a perfect balance of tangy lemon and fragrant tea.",
+      "price": 40
+    },
+    {
+      "id": 7,
+      "category": "Hot Beverages",
+      "name": "White Milo",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Australian_milo.jpg/1024px-Australian_milo.jpg",
+      "description": "Comforting and creamy, a delightful combination of Milo and milk.",
+      "price": 60
+    },
+    {
+      "id": 8,
+      "category": "Hot Beverages",
+      "name": "White Coffee",
+      "image": "https://static.toiimg.com/thumb/99206025.cms?width=680&height=512&imgsize=23758",
+      "description": "Smooth and mellow, a luxurious coffee experience.",
+      "price": 40
+    },
+    {
+      "id": 9,
+      "category": "Hot Beverages",
+      "name": "Black Coffee",
+      "image": "https://www.helenacoffee.vn/wp-content/uploads/2022/07/Best-Black-Coffee-To-Drink-1-1024x683.jpg",
+      "description": "Bold and robust, made from expertly roasted coffee beans.",
+      "price": 35
+    },
+    {
+      "id": 10,
+      "category": "Hot Beverages",
+      "name": "Masala Tea",
+      "image": "https://recipes.wellcurve.in/wp-content/uploads/2022/03/Masala-Tea.jpg",
+      "description": "A flavorful journey with aromatic spices.",
+      "price": 50
+    },
+    {
+      "id": 11,
+      "category": "Hot Beverages",
+      "name": "Milk Cup",
+      "image": "https://previews.123rf.com/images/victorhenry/victorhenry1711/victorhenry171100027/89583465-a-cup-of-hot-milk.jpg",
+      "description": "Creamy delight made with fresh and wholesome milk.",
+      "price": 50
+    },
+    {
+      "id": 12,
+      "category": "Hot Beverages",
+      "name": "Mixed Tea",
+      "image": "https://cdn11.bigcommerce.com/s-5ljyj9oebs/images/stencil/640w/products/2883/25369/P062622203113_1__24360.1701721227.jpg?c=2",
+      "description": "A harmonious blend of various tea leaves for a refreshing experience.",
+      "price": 30
+    },
+    {
+      "id": 13,
+      "category": "Hot Beverages",
+      "name": "Special Coffee",
+      "image": "https://www.goldenmoontea.com/cdn/shop/articles/3206781456_fcdaffcac5_o_f835a08e-d80e-467d-bb6f-6228affe3e14.jpg?v=1488235620",
+      "description": "Indulgent and aromatic, crafted with premium coffee beans and secret ingredients.",
+      "price": 50
+    },
+    {
+      "id": 14,
+      "category": "Hot Beverages",
+      "name": "Special Tea",
+      "image": "https://cdn.pixabay.com/photo/2016/12/06/17/33/tee-1887042_1280.jpg",
+      "description": "Exquisite and invigorating, infused with exclusive tea leaves and fragrant herbs.",
+      "price": 50
+    },
+    {
+      "id": 15,
+      "category": "Snacks",
+      "name": "Samosa",
+      "image": "https://img-global.cpcdn.com/recipes/37797/1360x964cq70/delicious-meat-samosa-recipe-main-photo.webp",
+      "description": "Crispy and flavorful, filled with beef add fresh vegetables.",
+      "price": 20
+    },
+    {
+      "id": 16,
+      "category": "Snacks",
+      "name": "Fried Eggs",
+      "image": "https://thepracticalkitchen.com/wp-content/uploads/2020/01/paprika_fried_egg_v2-0892-1024x683.jpg",
+      "description": "Golden and delicious, a simple and satisfying snack",
+      "price": 60
+    },
+    {
+      "id": 17,
+      "category": "Snacks",
+      "name": "Mandazi",
+      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2021/10/Mandazi-83f68c9.jpg?quality=90&webp=true&resize=300,272",
+      "description": "Irresistible East African pastries, lightly sweetened and fluffy",
+      "price": 10
+    },
+    {
+      "id": 18,
+      "category": "Snacks",
+      "name": "Pancake",
+      "image": "https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/42/73/28/picxLEsCH.jpg",
+      "description": "Fluffy and mouthwatering, a classic breakfast treat",
+      "price": 30
+    },
+    {
+      "id": 19,
+      "category": "Snacks",
+      "name": "Plain Omelette",
+      "image": "https://www.olivetomato.com/wp-content/uploads/2016/02/SAM4952-1.jpg",
+      "description": "Simple and delicious, made with farm-fresh eggs and clean cut vegetables ",
+      "price": 60
+    },
+    {
+      "id": 20,
+      "category": "Snacks",
+      "name": "Spanish Omelette",
+      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1201679_10-7b75aa2.jpg?quality=90&webp=true&resize=440,400",
+      "description": "Flavors of Spain, packed with sautéed vegetables and savory spices",
+      "price": 70
+    },
+    {
+      "id": 21,
+      "category": "Snacks",
+      "name": "Smokie",
+      "image": "https://usercontent.one/wp/www.cd4p.ch/wp-content/uploads/2021/11/smokie-Pasua.jpg?media=1667983455",
+      "description": "A delicious smoked sausage, perfect for snacking or as an addition to your favorite dishes",
+      "price": 35
+    },
+    {
+      "id": 22,
+      "category": "Snacks",
+      "name": "Sausage",
+      "image": "https://www.daringgourmet.com/wp-content/uploads/2018/01/Breakfast-Sausages-5-square-lighter-2.jpg",
+      "description": " A savory and flavorful sausage, great for any occasion or as a filling snack",
+      "price": 40
+    },
+    {
+      "id": 23,
+      "category": "Cold Beverages",
+      "name": "Soda 300ml",
+      "image": "https://images.yaoota.com/yllPPY6RGslGQ_AUV6gH5cBvv4Y=/trim/fit-in/500x500/filters:quality(80)/yaootaweb-production-ke/media/crawledproductimages/9e8104179dee24efdf607820db04a671620004a2.jpg",
+      "description": "Refreshing and fizzy, a perfect size to quench your thirst",
+      "price": 60
+    },
+    {
+      "id": 24,
+      "category": "Cold Beverages",
+      "name": "Soda 500ml",
+      "image": "https://mamasimon.com/wp-content/uploads/2020/10/SToney-Tangawizi-500-ML.jpg",
+      "description": "Experience the bold kick of Stoney in a 500ml bottle - the perfect thirst-quencher!",
+      "price": 100
+    },
+    {
+      "id": 25,
+      "category": "Cold Beverages",
+      "name": "Mineral Water 1l",
+      "image": "https://thumbs.dreamstime.com/z/group-plastic-drink-water-bottles-d-render-illustration-five-clear-purified-carbonated-isolated-white-background-80598314.jpg?w=768",
+      "description": "Pure and hydrating, stay refreshed with this large bottle of mineral water",
+      "price": 80
+    },
+    {
+      "id": 26,
+      "category": "Accompaniments",
+      "name": "Ugali",
+      "image": "https://tasteoftheplace.com/wp-content/uploads/2017/03/Ugali-at-TasteOfThePlace.com-inline-2.jpg?ezimgfmt=ngcb1/notWebP",
+      "description": "A staple accompaniment, enjoy this traditional Kenyan dish made from cornmeal",
+      "price": 30
+    },
+    {
+      "id": 27,
+      "category": "Accompaniments",
+      "name": "Chapati",
+      "image": "https://assets-global.website-files.com/5a4bcbe8872a3f00012e0564/5f732f8785c0dad0ccb6f17e_Chapati-recipe-Fanjove-p-1080.jpeg",
+      "description": "Soft and flaky, savor the taste of this popular Kenyan flatbread",
+      "price": 25
+    },
+    {
+      "id": 28,
+      "category": "Accompaniments",
+      "name": "Chips",
+      "image": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/06/15/09/chips.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp",
+      "description": "Crispy and golden, indulge in these delicious fried potato chips",
+      "price": 100
+    },
+    {
+      "id": 29,
+      "category": "Accompaniments",
+      "name": "Greens",
+      "image": "https://z-p3-scontent.fmba2-1.fna.fbcdn.net/v/t1.6435-9/93772124_1343763015821775_3887161336655773696_n.jpg?stp=cp0_dst-jpg_e15_p240x240_q65&_nc_cat=103&ccb=1-7&_nc_sid=8e9deb&_nc_ohc=PUnuEdb4Yp8AX925380&_nc_ht=z-p3-scontent.fmba2-1.fna&oh=00_AfAx-d_dY8CK-MqGKuJO5nvv_w1lFE2QQwv4WIbZzPLeJg&oe=65E3D714",
+      "description": "Fresh and nutritious, enjoy a serving of flavorful and healthy greens",
+      "price": 50
+    },
+    {
+      "id": 30,
+      "category": "Accompaniments",
+      "name": "Mukimo",
+      "image": "https://z-p3-scontent.fmba2-1.fna.fbcdn.net/v/t1.18169-9/14716253_1198435116880647_8723765036026132673_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=c2f564&_nc_ohc=cXk-V-EBuZ8AX8-BAzP&_nc_ht=z-p3-scontent.fmba2-1.fna&oh=00_AfBLnVHaswvjpTSEFacoZpyBklQish88-NOhCw10lpqUHw&oe=65E3D8DF",
+      "description": "A hearty dish, relish the combination of mashed potatoes, corn, and vegetables",
+      "price": 80
+    },
+    {
+      "id": 31,
+      "category": "Accompaniments",
+      "name": "Rice",
+      "image": "https://www.allrecipes.com/thmb/ffF5XSn_QYjPTWi4qNsTUPE1Q8w=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/33385best-spanish-ricemarilynrsood-565e11d080f442b4a7c28a34e92073bc.jpg",
+      "description": "A classic choice, complement your meal with a side of fluffy and aromatic rice",
+      "price": 50
+    },
+    {
+      "id": 32,
+      "category": "Accompaniments",
+      "name": "Toast",
+      "image": "https://storables.com/wp-content/uploads/2023/09/how-to-store-toasted-bread-1695442605.jpeg",
+      "description": "Simple and satisfying, enjoy a slice of toasted bread as a versatile accompaniment",
+      "price": 30
+    },
+    {
+      "id": 33,
+      "category": "Accompaniments",
+      "name": "Chips 1/2",
+      "image": "https://www.tamarindnthyme.com/wp-content/uploads/2020/04/Slap-Chips2-728x546.jpg",
+      "description": "Half portion chips.",
+      "price": 50
+    },
+    {
+      "id": 34,
+      "category": "Main Dishes",
+      "name": "Njahi",
+      "image": "https://img-global.cpcdn.com/recipes/8b795281f0b41307/680x482cq70/njahi-stew-recipe-main-photo.webp",
+      "description": "Embark on a culinary journey with the rich and spiced flavors of our Njahi stew.",
+      "price": 100
+    },
+    {
+      "id": 35,
+      "category": "Main Dishes",
+      "name": "Githeri",
+      "image": "https://kaneskitchenaffair.com/wp-content/uploads/2019/05/img_7119.jpg",
+      "description": "Celebrate tradition with our heartwarming and traditional Githeri.",
+      "price": 70
+    },
+    {
+      "id": 36,
+      "category": "Main Dishes",
+      "name": "Matumbo",
+      "image": "https://img-global.cpcdn.com/recipes/07a2e90cecb61539/400x400cq70/photo.jpg",
+      "description": "Indulge in the savory delight of our flavorful Matumbo stew.",
+      "price": 70
+    },
+    {
+      "id": 37,
+      "category": "Main Dishes",
+      "name": "Ndengu Stew",
+      "image": "https://i.ytimg.com/vi/wErh-zpM9ww/maxresdefault.jpg",
+      "description": "Experience the wholesome goodness of our Ndengu stew.",
+      "price": 70
+    },
+    {
+      "id": 38,
+      "category": "Main Dishes",
+      "name": "Peas Stew",
+      "image": "https://vidarbergum.com/wp-content/uploads/2022/05/lebanese-pea-stew-meat-bazela-5-720x540.jpg",
+      "description": "Savor the delightful and rich flavors of our Minji stew.",
+      "price": 100
+    },
+    {
+      "id": 39,
+      "category": "Main Dishes",
+      "name": "Special Githeri",
+      "image": "https://netstorage-tuko.akamaized.net/images/0fgjhs3olek3res77g.jpg?imwidth=900",
+      "description": "Indulge in our signature Special Githeri.",
+      "price": 100
+    },
+    {
+      "id": 40,
+      "category": "Main Dishes",
+      "name": "Beans",
+      "image": "https://theclevermeal.com/wp-content/uploads/2021/11/bean-stew_7-799x1024.jpg",
+      "description": "Experience the hearty goodness of our Maharagwe special.",
+      "price": 70
+    },
+    {
+      "id": 41,
+      "category": "Main Dishes",
+      "name": "Beef Stew",
+      "image": "https://thecozycook.com/wp-content/uploads/2020/09/Slow-Cooker-Beef-Stew-Recipe-f.jpg",
+      "description": "Enjoy the richness of our succulent Beef Stew.",
+      "price": 70
+    },
+    {
+      "id": 42,
+      "category": "Main Dishes",
+      "name": "Matoke",
+      "image": "https://eatwellabi.com/wp-content/uploads/2020/10/Matoke-11-1.jpg",
+      "description": "Delight in the exotic flavors of our Matoke dish.",
+      "price": 130
+    },
+    {
+      "id": 43,
+      "category": "Main Dishes",
+      "name": "Peas Stew and Rice",
+      "image": "https://www.alphafoodie.com/wp-content/uploads/2021/11/Carrot-Pea-Stew-Main2.jpeg",
+      "description": "Experience the perfect blend of Rice Minji, a delightful pea stew and rice combination.",
+      "price": 100
+    },
+    {
+      "id": 44,
+      "category": "Main Dishes",
+      "name": "Ugali Greens",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/48/Ugali_%26_Sukuma_Wiki.jpg",
+      "description": "Indulge in the wholesome goodness of our Ugali Greens, a blend of Ugali, Sukuma Wiki, spinach, and mboga kienyeji.",
+      "price": 120
+    },
+    {
+      "id": 45,
+      "category": "Main Dishes",
+      "name": "Beef Stew and Rice",
+      "image": "https://img-global.cpcdn.com/recipes/2c797f657518a93b/1200x630cq70/photo.jpg",
+      "description": "Experience the perfect pairing of our succulent Beef Stew with steamed rice.",
+      "price": 150
+    },
+    {
+      "id": 46,
+      "category": "Main Dishes",
+      "name": "Ndengu with Rice/Chapati",
+      "image": "https://i.ytimg.com/vi/YbIqtnbjAcY/maxresdefault.jpg",
+      "description": "A delightful combination of Ndengu served with your choice of rice or Chapati.",
+      "price": 100
+    }
+  ]  
+}
