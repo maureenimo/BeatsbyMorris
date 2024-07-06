@@ -244,3 +244,25 @@ class AddressResource(Resource):
 api.add_resource(AddressResource, '/address')
 
 
+# Menu
+class DishesResource(Resource):
+    def get(self):
+        foods = []
+        for food in Food.query.all():
+            response_body = {
+                "id": food.id,
+                "name": food.name,
+                "category": food.category,
+                "image": food.image,
+                "description": food.description,
+                "price": food.price
+            }
+            foods.append(response_body)
+        response = make_response(
+            jsonify(foods),
+            200
+        )
+        return response
+
+
+api.add_resource(DishesResource, '/dishes')
