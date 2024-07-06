@@ -199,4 +199,48 @@ class ReviewResource(Resource):
 
 api.add_resource(ReviewResource, '/review')
 
+# Address
+class AddressResource(Resource):
+    @jwt_required()
+    def post(self):
+        data = request.get_json()
+
+        required_fields = ['user_email', 'city',
+                           'area', 'street', 'building', 'room']
+        if not all(field in data for field in required_fields):
+            return make_response(jsonify({"error": "Missing required fields"}), 400)
+
+        user = User.query.filter_by(email=data['user_email']).first()
+        if not user:
+            return make_response(jsonify({"error": "User not found"}), 404)
+
+        new_address = Address(
+            user_id=user.id,
+            city=data['city'],
+            area=data['area'],
+            street=data['street'],
+            building=data['building'],
+            room=data['room'],
+            notes=data.get('notes', None)
+        )
+
+        db.session.add(new_address)
+        db.session.commit()
+
+        response_body = {
+            "id": new_address.id,
+            "user_email": data['user_email'],
+            "city": new_address.city,
+            "area": new_address.area,
+            "street": new_address.street,
+            "building": new_address.building,
+            "room": new_address.room,
+            "notes": new_address.notes,
+        }
+
+        return make_response(jsonify(response_body), 201)
+
+
+api.add_resource(AddressResource, '/address')
+
 
