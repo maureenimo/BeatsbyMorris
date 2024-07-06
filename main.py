@@ -110,3 +110,59 @@ user_schema = UserSchema()
 users_schema = UserSchema(many=True)
 
 
+@app.route('/userbyid/<int:id>', methods=['GET'])
+def userbyid(id):
+    user = User.query.get(id)
+    if user is None:
+        return make_response("User not found", 404)
+    return make_response(user_schema.dump(user), 200)
+
+
+class Users(Resource):
+    @jwt_required()
+    def get(self):
+        users = User.query.all()
+
+        return make_response(
+            users_schema.dump(users), 200
+        )
+
+
+api.add_resource(Users, '/users')
+
+
+class Signup(Resource):
+    def post(self):
+        user = request.get_json()
+
+        # Validate password not emplty
+        if not user['password']:
+            return make_response("Password must not be empty", 400)
+
+        # Check that user exists - email
+        user_exists = User.query.filter_by(email=user['email']).first()
+
+        if user_exists:
+            return make_response("User already exists", 400)
+
+        new_user = User(
+            first_name=user['first_name'],
+            last_name=user['last_name'],
+            email=user['email'],
+            phone=user['phone'],
+            password=user['password']
+        )
+        db.session.add(new_user)
+        db.session.commit()
+
+        return make_response({
+            'first_name': new_user.first_name,
+            'last_name': new_user.last_name,
+            'email': new_user.email,
+            'phone': new_user.phone,
+        }, 200)
+
+api.add_resource(Signup, '/signup')
+
+
+
