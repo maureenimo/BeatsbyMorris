@@ -285,5 +285,18 @@ class LocationResource(Resource):
         )
         return response
 
-
 api.add_resource(LocationResource, '/locations')
+
+# Distance
+class DistanceResource(Resource):
+    def get(self):
+        origin = request.args.get('origins')
+        destination = request.args.get('destinations')
+        api_key = request.args.get('key')
+        url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins={}&destinations={}&key={}".format(
+            origin, destination, api_key)
+        response = requests.get(url)
+        print(response.json())
+        return response.json()
+
+api.add_resource(DistanceResource, '/distance')
