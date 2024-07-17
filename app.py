@@ -19,10 +19,10 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587  
 app.config['MAIL_USE_TLS'] = True  
 app.config['MAIL_USE_SSL'] = False  
-# app.config['MAIL_USERNAME'] = 'nimz69509@gmail.com'
-# app.config['MAIL_PASSWORD'] = 'zabc lnoq cbkv nupc'
-# app.config['MAIL_DEFAULT_SENDER'] = 'nimz69509@gmail.com'
-# app.json.compact = False
+app.config['MAIL_USERNAME'] = "pythonmaster56@gmail.com"
+app.config['MAIL_PASSWORD'] = "jqgu ardd vyfe nkpv"
+app.config['MAIL_DEFAULT_SENDER'] = "pythonmaster56@gmail.com"
+app.json.compact = False
 
 CORS(app)
 
